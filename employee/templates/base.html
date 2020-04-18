@@ -2,18 +2,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <title>Smarttick</title>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-  {%block content%}
+<head>
+  <title>Smarttick</title>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .mobile-container {
+      max-width: 292px;
+      margin: auto;
+      background-image: linear-gradient(-45deg, #500949, #a12995);
+      height: 520px;
+      color: white;
+      border-radius: 10px;
+      padding: 2%;
+    }
+  </style>
+  <!-- style block start -->
+  {%block style%}
+  {%endblock%}
+  <!-- style block end -->
+</head>
+
+<body>
+  <div class="mobile-container">
+    {%block content%}
+
+    {% endblock %}
+  </div>
+  <!-- script block start -->
+  {%block script%}
   {% endblock %}
-  </body>
+  <!-- script block end -->
+</body>
+
 </html>
