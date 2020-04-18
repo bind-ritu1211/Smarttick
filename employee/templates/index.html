@@ -1,41 +1,75 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %} 
-<head>
-  <style>    
-    .mobile-container {
-      max-width: 292px;
-      margin: auto;
-      background-color: #500949;
-      height: 520px;
-      color: white;
-      border-radius: 10px;
-    }
-  </style>
-</head>
-<body>  
-  <div class="mobile-container">
-    <div class="img">
-      <img src="{% static 'img/smarttick_white.png' %}" alt="smart" style="width: 263px;height: 102px;margin-left: 15px;margin-right: 15px;margin-top: 130px;padding-left: 25px;padding-right: 25px;">
-    </div> 
-    <div class="row">
-      <div class="input-field col s6">
-        <label for="email" style="margin-bottom:-20px">Email</label>
-        <input placeholder="" id="email" type="email" name="email" style="border-radius: 25px; border: black;color: white; padding-top: 30px; height: 27px; width: 245px; background-color: #B408B8;margin-left: 40px;">
-      </div>                                                              
+{%block style%}
+<style>
+  .form_inner_style {
+    padding: 18px;
+    border-radius: 25px;
+    border: black;
+    color: white;
+    height: 27px;
+    width: 245px;
+    background-color: #B408B8;
+  }
+
+  .button-style {
+    border-radius: 25px;
+    border: black;
+    height: 27px;
+    width: 132px;
+    background-color: #8c087f;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: times new roman;
+    padding-top: 1px;
+  }
+
+  .logo-class {
+    width: 230px;
+    height: 102px;
+    margin-top: 99px;
+  }
+
+  .img {
+    text-align: center;
+  }
+
+  .label-right {
+    text-align: left;
+    padding-left: 30px;
+  }
+</style>
+{%endblock%}
+
+{% block content %}
+<div style="text-align: center;">
+  <div class="img">
+    <img src="{% static 'img/smarttick_white.png' %}" alt="smart" class="logo-class">
+  </div>
+  <div class="row">
+    <div class="label-right">
+      <label for="email">Email</label>
     </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <label for="password">Password</label>
-        <input placeholder="" id="password" type="password" name="password" style="border-radius: 25px; border: black; color: white; padding-top: 30px; height: 27px; width: 245px; background-color: #B408B8;margin-left: 40px;">
-      </div>   
-        <a href="">
-        <p style ="font-size: 14px; font-weight: bold;color: white; margin-left: 170px;"> Forget Password?</p> </a>
-      </div>
-        <button class="btn waves-effect waves-light" type="submit" style=" border-radius: 25px; border: black; height: 27px;
-              width: 132px;background-color: #EA29EE; margin-left: 85px; color: white; font-size: 18px; font-weight: bold;font-family: times new roman;padding-top: 1px;">Login       
-        </button>
-      </div>
+    <div class="input-field col s6">
+      <input placeholder="" id="email" type="email" name="email" class="form_inner_style">
     </div>
-  </body>
+  </div>
+  <div class="row" style="padding-top:22px">
+    <div class="label-right">
+      <label for="password">Password</label>
+    </div>
+    <div class="input-field col s6">
+      <input placeholder="" id="password" type="password" name="password" class="form_inner_style">
+    </div>
+    <a href="" class="forget-pass-class" style="text-align: right;color:#fff">
+      <p> Forget Password?</p>
+    </a>
+  </div>
+  <div class="row">
+    <button class="btn waves-effect waves-light button-style" type="submit">Login
+    </button>
+  </div>
+</div>
+
 {% endblock %}
