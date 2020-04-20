@@ -10,3 +10,15 @@ class HomeView(TemplateView):
 
 class CheckInView(TemplateView):
     template_name = "checkin.html"
+
+
+class CheckOutView(TemplateView):
+    template_name = "checkout.html"
+
+
+class EmployeeView(TemplateView):
+    template_name = "employee_profile.html"
+  
+
+class AttendanceView(TemplateView):
+    template_name = "attendance.html"

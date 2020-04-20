@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block style%}
+<style>
+    .logo-class {
+        width: 122px;
+        height: 44px;
+        margin-right: 77px;
+
+    }
+
+    .navbar-inverse {
+        border-radius: 5px;
+        background-color: #6d0863;
+        border-color: #6d0863;
+        margin-right: -19px;
+        margin-left: -19px;
+        margin-top: -13px;
+
+
+    }
+
+    .navbar-inverse .navbar-toggle {
+        background-color: #6d0863;
+        border-color: #6d0863;
+    }
+
+    .button.navbar-toggle {
+        background-color: #6d0863;
+    }
+
+    /*.attendance-class {
+        height: 39px;
+        width: 50px;
+    }
+
+    .add-class {
+        height: 68px;
+        width: 50px;
+    }
+
+    .delete-class {
+        height: 39px;
+        width: 50px;
+    }
+
+    .update-class {
+        height: 39px;
+        width: 50px;
+    }
+*/
+    .employee-profile {
+        text-align: center;
+        margin-top: 16px;
+    }
+</style>
+{% endblock %}
+
+<body>
+    {% block content %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width: 107%;">
+                <button type="button" style="display: block;" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="img">
+                    <img src="{% static 'img/smarttick_white.png' %}" alt="smart" class="logo-class">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</body>
+
+</html>
+{% endblock %}
