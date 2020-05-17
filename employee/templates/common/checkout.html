@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
 {%block style%}
 <style>
@@ -29,29 +29,9 @@
         background-color: #6d0863;
     }
 
-    /*.attendance-class {
-        height: 39px;
-        width: 50px;
-    }
-
-    .add-class {
-        height: 68px;
-        width: 50px;
-    }
-
-    .delete-class {
-        height: 39px;
-        width: 50px;
-    }
-
-    .update-class {
-        height: 39px;
-        width: 50px;
-    }
-*/
-    .employee-profile {
+    .check-out {
         text-align: center;
-        margin-top: 16px;
+        margin-top: 50%;
     }
 </style>
 {% endblock %}
@@ -73,8 +53,10 @@
             </div>
         </div>
     </nav>
-
+    <div class="check-out">
+        <img src="{% static 'img/tick.svg' %}" alt="smart">
+    </div>
+    <p style="text-align: center;font-weight: bold;font-size: 23px;"> Click here to CHECKOUT</p>
 </body>
 
-</html>
 {% endblock %}

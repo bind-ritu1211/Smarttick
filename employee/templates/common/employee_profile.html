@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
 {%block style%}
 <style>
@@ -29,9 +29,15 @@
         background-color: #6d0863;
     }
 
-    .check-out {
+    .employee-profile {
         text-align: center;
-        margin-top: 50%;
+        margin-top: 16px;
+    }
+
+    hr. {
+        border: 10px solid white;
+        margin-top: -12px;
+        margin-bottom: 36px
     }
 </style>
 {% endblock %}
@@ -53,11 +59,19 @@
             </div>
         </div>
     </nav>
-    <div class="check-out">
-        <img src="{% static 'img/tick.svg' %}" alt="smart">
+    <div class="employee-profile">
+        <img src="{% static 'img/user.png' %}" alt="smart">
     </div>
-    <p style="text-align: center;font-weight: bold;font-size: 23px;"> Click here to CHECKOUT</p>
+    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">Employee Name</p>
+    <hr>
+    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">Employee Id</p>
+    <hr>
+    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">DOB</p>
+    <hr>
+    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">Address</p>
+    <hr>
+
+
 </body>
 
-</html>
 {% endblock %}

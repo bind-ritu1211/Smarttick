@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
 {%block style%}
 <style>
@@ -29,15 +29,29 @@
         background-color: #6d0863;
     }
 
+    /*.attendance-class {
+        height: 39px;
+        width: 50px;
+    }
+
+    .add-class {
+        height: 68px;
+        width: 50px;
+    }
+
+    .delete-class {
+        height: 39px;
+        width: 50px;
+    }
+
+    .update-class {
+        height: 39px;
+        width: 50px;
+    }
+*/
     .employee-profile {
         text-align: center;
         margin-top: 16px;
-    }
-
-    hr. {
-        border: 10px solid white;
-        margin-top: -12px;
-        margin-bottom: 36px
     }
 </style>
 {% endblock %}
@@ -59,20 +73,7 @@
             </div>
         </div>
     </nav>
-    <div class="employee-profile">
-        <img src="{% static 'img/user.png' %}" alt="smart">
-    </div>
-    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">Employee Name</p>
-    <hr>
-    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">Employee Id</p>
-    <hr>
-    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">DOB</p>
-    <hr>
-    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">Address</p>
-    <hr>
-
 
 </body>
 
-</html>
 {% endblock %}

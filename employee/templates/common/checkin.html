@@ -1,12 +1,19 @@
-{% extends 'base.html' %}
+{% extends "common/base.html" %}
 {% load static %}
 {%block style%}
+
 <style>
   .logo-class {
     width: 122px;
     height: 44px;
     margin-right: 77px;
 
+  }
+
+
+  .check-in {
+    text-align: center;
+    margin-top: 50%;
   }
 
   .navbar-inverse {
@@ -28,11 +35,6 @@
   .button.navbar-toggle {
     background-color: #6d0863;
   }
-
-  .check-in {
-    text-align: center;
-    margin-top: 50%;
-  }
 </style>
 {% endblock %}
 
@@ -53,12 +55,10 @@
       </div>
     </div>
   </nav>
+
   <div class="check-in">
     <img src="{% static 'img/tick.svg' %}" alt="smart">
   </div>
   <p style="text-align: center;font-weight: bold; font-size: 23px;"> Succesfully CHECK-IN</p>
 
-</body>
-
-</html>
-{% endblock %}
+  {% endblock %}
