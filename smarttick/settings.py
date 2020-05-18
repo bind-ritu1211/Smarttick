@@ -44,7 +44,8 @@ THIRD_PARTY = [
 ]
 
 LOCAL_APP = [
-    'employee'
+    'employee',
+    'rest_framework'
 ]
 
 INSTALLED_APPS = THIRD_PARTY+LOCAL_APP
