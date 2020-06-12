@@ -2,15 +2,16 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-
-class City(models.Model):
-    name = models.CharField(max_length=255, blank=True, null=True)
-    def __str__(self):
-        return self.name
 class State(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
     def __str__(self):
        return self.name
+class City(models.Model):
+    state = models.ForeignKey(State,on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    def __str__(self):
+        return self.name
+
 
 class EmployeeProfile(models.Model):
     SEX_CHOICE = [
@@ -46,5 +47,5 @@ class Attendance(models.Model):
     check_in =models.DateTimeField( blank=True, null=True)
     check_out =models.DateTimeField( blank=True, null=True)
     def __str__(self):
-        return self.status
+        return self.status 
  

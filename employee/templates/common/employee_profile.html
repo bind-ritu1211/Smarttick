@@ -36,8 +36,10 @@
 
     hr. {
         border: 10px solid white;
-        margin-top: -12px;
-        margin-bottom: 36px
+    }
+    .h3, h3 {
+        text-align: center;
+        font-weight: bold;
     }
 </style>
 {% endblock %}
@@ -62,13 +64,13 @@
     <div class="employee-profile">
         <img src="{% static 'img/user.png' %}" alt="smart">
     </div>
-    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">Employee Name</p>
+    <h3>EMPLOYEE NAME</h3>
     <hr>
-    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">Employee Id</p>
+    <h3>EMPLOYEE ID</h3>
     <hr>
-    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">DOB</p>
+    <h3>DOB</h3>
     <hr>
-    <p style="text-align: center;font-weight: bold; font-size: 23px;margin: 16px;">Address</p>
+    <h3>ADDRESS</p>
     <hr>
 
 

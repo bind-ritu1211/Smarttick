@@ -30,6 +30,12 @@ class AttendanceView(TemplateView):
     @method_decorator(login_required)
     def get(self, request):
         return render(self.request, self.template_name, {})
+class AttendanceView(APIView):
+    def get(self, request, format=None):
+        attendance = Attendance.objects.filter(employee_profile=self.request.user)
+        if attendance:
+            attendance = AttendanceSerializer(attendance, many=True)
+        return Response(attendance.data)
 
 class CheckOutView(TemplateView):
     template_name = "common/checkout.html"
