@@ -7,7 +7,6 @@ from rest_framework.response import Response
 from .serializer import EmployeeProfileSerializer,AttendanceSerializer
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
-#from datetime import datetime,timedelta
 import datetime
 datetime.date.today()
 import _datetime
@@ -27,7 +26,7 @@ class HomeView(TemplateView):
 
 
 
-class AttendanceProfileView(TemplateView):
+class AttendanceTemplateView(TemplateView):
     template_name = "common/attendance.html"
 
     @method_decorator(login_required)
@@ -45,7 +44,7 @@ class AttendanceView(APIView):
 
 
 
-class CheckOutView(TemplateView):
+class CheckOutTemplateView(TemplateView):
     template_name = "common/checkout.html"
 
     @method_decorator(login_required)
