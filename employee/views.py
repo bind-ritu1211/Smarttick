@@ -17,6 +17,7 @@ print(today)
 current_time = now.strftime("%H:%M")
 # Create your views here.
 
+
 class HomeView(TemplateView):
     template_name = "common/checkin.html"
 
@@ -24,12 +25,16 @@ class HomeView(TemplateView):
     def get(self, request):
         return render(self.request, self.template_name, {})
 
-class AttendanceView(TemplateView):
+
+
+class AttendanceProfileView(TemplateView):
     template_name = "common/attendance.html"
 
     @method_decorator(login_required)
     def get(self, request):
         return render(self.request, self.template_name, {})
+
+
 class AttendanceView(APIView):
     def get(self, request, format=None):
         attendance = Attendance.objects.filter(employee_profile=self.request.user)
@@ -37,12 +42,17 @@ class AttendanceView(APIView):
             attendance = AttendanceSerializer(attendance, many=True)
         return Response(attendance.data)
 
+
+
+
 class CheckOutView(TemplateView):
     template_name = "common/checkout.html"
 
     @method_decorator(login_required)
     def get(self, request):
         return render(self.request, self.template_name, {})
+
+
 
 class CheckInView(APIView):
     def post(self, request, *args):
@@ -52,16 +62,19 @@ class CheckInView(APIView):
                 attendance = Attendance.objects.create(status="Full_Day",
                                                 employee_profile=self.request.user,
                                                 check_in= now,
-    )
+)
             else:
             #pass
                 attendance= Attendance.objects.create(status="Half_Day",
                                                 employee_profile=self.request.user,
                                                 check_in= now,
-    )
+)
             return Response("successfully checked in")
         else:
             return Response("already checked in")
+
+
+
 
 class CheckOutView(APIView):
     def post(self, request, *args):
@@ -72,6 +85,8 @@ class CheckOutView(APIView):
         return Response("successfully check out") 
         #print("successfully check out")
 
+
+
 class EmployeeView(TemplateView):
     template_name = "common/employee_profile.html"
 
@@ -79,6 +94,9 @@ class EmployeeView(TemplateView):
     def get(self, request):
         return render(self.request, self.template_name, {})
         
+
+
+
 class EmployeeProfileView(APIView):
     def get(self, request, format=None):
         employee_profile = EmployeeProfile.objects.filter(user=self.request.user)
