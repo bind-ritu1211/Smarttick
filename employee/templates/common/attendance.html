@@ -2,21 +2,20 @@
 {% load static %}
 {%block style%}
 <style>
+
+.navbar-inverse {
+    border-top-right-radius: 21px;
+    border-top-left-radius: 21px;
+    background-color: #6d0863;
+    border-color: #6d0863;
+    margin-right: -26px;
+    margin-left: -26px;
+    margin-top: -26px;
+    }
     .logo-class {
         width: 122px;
         height: 44px;
-        margin-right: 77px;
-
-    }
-
-    .navbar-inverse {
-        border-radius: 5px;
-        background-color: #6d0863;
-        border-color: #6d0863;
-        margin-right: -19px;
-        margin-left: -19px;
-        margin-top: -13px;
-
+        margin-top:-60px;
 
     }
 
@@ -28,35 +27,83 @@
     .button.navbar-toggle {
         background-color: #6d0863;
     }
-     .hr {
-        margin: 44px;
-    }
-    .employee-profile {
-        text-align: center;
-        margin-top: 16px;
-    }
-    .h5,h5{
+   
+    .test:after {
+  content: '\2807';
+  font-size: 2em;
+  color: whitesmoke;
+  padding-left:230px;
+}
+
+    .h4,h4{
         font-weight: bold;
         text-align: center;
-        padding-left: 6px;
-        padding-top: 15px;
+        height: 27px;
+        width: 94px;
+        color: #FFFDFD;
+        font-family: roboto;
+        margin-top: -5px;
     }
-    .table {
-        margin-top: 45px;
-        }
-    .table, th, td {
-    border: 1px solid white;
-    border-collapse: collapse;
-}
-    .th, td {
-    padding: 15px;
-    text-align: center;
-}
+
     .col {
   float: left;
   padding: 10px;
 }
-
+/*.header{
+    
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-bottom-color: white;
+    border-bottom-width: thin;
+    border-top-color: white;
+    border-top-width: thin;
+    width: 273px;
+    height: 38px;
+    margin-top: 27px;
+    margin-left: -16px;
+}
+*/
+able.scrolldown { 
+			width: 100%; 
+			
+			/* border-collapse: collapse; */ 
+			border-spacing: 0; 
+			border: 2px solid black; 
+		} 
+		
+		/* To display the block as level element */ 
+		table.scrolldown tbody, table.scrolldown thead { 
+			display: block; 
+		} 
+		
+		thead tr th { 
+			height: 40px; 
+			line-height: 40px; 
+		} 
+		
+		table.scrolldown tbody { 
+			
+			/* Set the height of table body */ 
+			height: 50px; 
+			
+			/* Set vertical scroll */ 
+			overflow-y: auto; 
+			
+			/* Hide the horizontal scroll */ 
+			overflow-x: hidden; 
+		} 
+		
+		tbody { 
+			border-top: 2px solid black; 
+		} 
+		
+		tbody td, thead th { 
+			width : 200px; 
+			border-right: 2px solid black; 
+		} 
+		td { 
+			text-align:center; 
+		} 
 </style>
 {% endblock %}
 
@@ -64,28 +111,119 @@
     {% block content %}
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-            <div class="navbar-header" style="width: 107%;">
-                <button type="button" style="display: block;" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="img">
-                    <img src="{% static 'img/smarttick_white.png' %}" alt="smart" class="logo-class">
-                </div>
+            <div class="navbar-header">
+            <div class = "navbar-brand"> 
+            <div class="test">
             </div>
+                <div class = "img">
+                    <img src="{% static 'img/smarttick_white.png' %}" alt="smart" class="logo-class">
+                </div>  
+            </div> 
         </div>
-    </nav>
+    </div>
+</nav>        
     <div class="row">
         <div class="col">
             <div class="img">
-                <img src="{% static 'img/attendance.png' %}" alt="smart" style="height: 79px; width: 99px;">
+                <img src="{% static 'img/attendance.png' %}" alt="smart" style="height: 49px; width: 52px; margin-top:-20px;">
         </div>
     </div>
-        <div class="col"><h5>EMPLOYEE NAME</h5>
+        <div class="col"><h4>Ritu Bind</h4>
     </div>
 </div>
+<table class="scrolldown"> 
+		
+    <!-- Table head content -->
+    <thead> 
+        <tr> 
+            <th>Date</th> 
+            <th>Status</th> 
+             
+        </tr> 
+    </thead> 
+    
+    <!-- Table body content -->
+    <tbody> 
+        <tr> 
+            <td>10-12-2012</td> 
+            <td>Full Day</td> 
+            
+        </tr> 
+        
+        <tr> 
+            <td>10-12-2012</td> 
+            <td>Full Day</td> 
+        </tr> 
+        <tr> 
+            <td>10-12-2012</td> 
+            <td>Full Day</td> 
+        </tr> 
+        <tr> 
+            <td>10-12-2012</td> 
+            <td>Full Day</td> 
+        </tr> 
+        <tr> 
+            <td>10-12-2012</td> 
+            <td>Full Day</td> 
+        </tr> 
+    </tbody> 
+</table> 
+<!--
+<div class="header">
+<div class="row">
+    <div class="col" style="border-right-style: solid;border-right-width: thin;margin-left: 100px;height: 36px;">
+        <p style="font-weight: bold;
+        margin-top: -5px;
+        text-align: center;font-size: 16px;">Date</p> </div>
+    <div class="col"><h4>status</h4>
+</div>
+</div>
+<div class="row">                     
+    <div class="col">
+<dl style="padding-right: 18px;
+padding-left: 62px;">
+    <dt>10-12-2012</dt>
+    <dt>10-12-2012</dt><dt>10-12-2012</dt><dt>10-12-2012</dt><dt>10-12-2012</dt><dt>10-12-2012</dt>
+    <dt>10-12-2012</dt><dt>10-12-2012</dt><dt>10-12-2012</dt><dt>10-12-2012</dt>
+    <dt>10-12-2012</dt>
+    <dt>10-12-2012</dt>
+    <dt>10-12-2012</dt>
+    
+  </dl>
+    </div>
+    <div class="col">
+        <dl>
+            <dt>Full Day</dt>
+            <dt>Full Day</dt>
+            <dt>Full Day</dt>
+            <dt>Half Day</dt><dt>Full Day</dt>
+            <dt>Full Day</dt><dt>Half Day</dt>
+            <dt>Full Day</dt><dt>Half Day</dt>
+            <dt>Full Day</dt><dt>Half Day</dt>
+            <dt>Full Day</dt><dt>
+          </dl>
+    </div>
+</div>
+
+   <div class="row">
+        <div class="col" style="border-right-style: solid;border-right-width: thin;margin-left: 100px;height: 36px;">
+            <p style="font-weight: bold;
+            margin-top: -5px;
+            text-align: center;font-size: 16px;">Date</p> </div>
+        <div class="col"><h4>status</h4>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col" style="border-right-style: solid;border-right-width: thin;margin-left: 100px;height: 36px;">
+            <p style="font-weight: bold;
+            margin-top: -5px;
+            text-align: center;font-size: 16px;">Date</p> </div>
+        <div class="col"><h4>status</h4>
+    </div>
+    </div>
+    </div>-->
+    
 </body>
+
 
 {% endblock %}
