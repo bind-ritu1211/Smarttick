@@ -10,28 +10,29 @@
         margin-right: -26px;
         margin-left: -26px;
         margin-top: -26px;
-        }
-        .logo-class {
-            width: 122px;
-            height: 44px;
-            margin-top:-60px;
-    
-        }
-    
-        .navbar-inverse .navbar-toggle {
-            background-color: #6d0863;
-            border-color: #6d0863;
-        }
-    
-        .button.navbar-toggle {
-            background-color: #6d0863;
-        }
-       
-        .test:after {
-      content: '\2807';
-      font-size: 2em;
-      color: whitesmoke;
-      padding-left:230px;
+    }
+
+    .logo-class {
+        width: 122px;
+        height: 44px;
+        margin-top: -60px;
+
+    }
+
+    .navbar-inverse .navbar-toggle {
+        background-color: #6d0863;
+        border-color: #6d0863;
+    }
+
+    .button.navbar-toggle {
+        background-color: #6d0863;
+    }
+
+    .test:after {
+        content: '\2807';
+        font-size: 2em;
+        color: whitesmoke;
+        padding-left: 230px;
     }
 
 
@@ -43,39 +44,41 @@
     .hr {
         border: 10px solid white;
     }
-    .h3, h3 {
+
+    .h3,
+    h3 {
         text-align: center;
         font-weight: bold;
     }
-    </style>
-    {% endblock %}
-    
-    <body>
-        {% block content %}
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                <div class = "navbar-brand"> 
-                <div class="test">
-                </div>
-                    <div class = "img">
+</style>
+{% endblock %}
+
+<body>
+    {% block content %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    <div class="test">
+                    </div>
+                    <div class="img">
                         <img src="{% static 'img/smarttick_white.png' %}" alt="smart" class="logo-class">
-                    </div>  
-                </div> 
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>     
+    </nav>
 
     <div class="employee-profile">
         <img src="{% static 'img/user.png' %}" alt="smart">
     </div>
-    <h3>EMPLOYEE NAME</h3>
+    <h3 id="emp_name">EMPLOYEE NAME</h3>
     <hr>
-    <h3>EMPLOYEE ID</h3>
+    <h3 id="emp_id">EMPLOYEE ID</h3>
     <hr>
-    <h3>DOB</h3>
+    <h3 id="emp_designation">DOB</h3>
     <hr>
-    <h3>ADDRESS</p>
+    <h4 id="emp_email">ADDRESS</h4>
     <hr>
 
 </body>
@@ -83,13 +86,16 @@
 {% endblock %}
 
 {%block script%}
- 
+
 <script>
-$.ajax({
-    type: 'get', 
-    url: '/employee_profile_api/',
-      success: function (response) {
-            console.log(response)
+    $.ajax({
+        type: 'get',
+        url: '/employee_profile_api/',
+        success: function (response) {
+            $('#emp_name').text(response[0].name)
+            $('#emp_id').text(response[0].id)
+            $('#emp_designation').text(response[0].designation)
+            $('#emp_email').text(response[0].email)
         }
     });
 </script>
