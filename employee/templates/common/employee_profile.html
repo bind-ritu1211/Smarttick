@@ -40,7 +40,7 @@
         margin-top: 16px;
     }
 
-    hr. {
+    .hr {
         border: 10px solid white;
     }
     .h3, h3 {
@@ -80,4 +80,17 @@
 
 </body>
 
+{% endblock %}
+
+{%block script%}
+ 
+<script>
+$.ajax({
+    type: 'get', 
+    url: '/employee_profile_api/',
+      success: function (response) {
+            console.log(response)
+        }
+    });
+</script>
 {% endblock %}

@@ -63,12 +63,16 @@
     margin-left: -16px;
 }
 */
-able.scrolldown { 
-			width: 100%; 
-			
+table.scrolldown { 
+    width: 273px;
+    margin-left: -16px;
 			/* border-collapse: collapse; */ 
 			border-spacing: 0; 
-			border: 2px solid black; 
+			border: 2px solid white;
+            border-top-width: thin; 
+            border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color:transparent;
 		} 
 		
 		/* To display the block as level element */ 
@@ -84,7 +88,7 @@ able.scrolldown {
 		table.scrolldown tbody { 
 			
 			/* Set the height of table body */ 
-			height: 50px; 
+			height: 276px; 
 			
 			/* Set vertical scroll */ 
 			overflow-y: auto; 
@@ -94,16 +98,22 @@ able.scrolldown {
 		} 
 		
 		tbody { 
-			border-top: 2px solid black; 
+			border-top: 2px solid white;
+            border-top-width: thin;
+            padding: 18px;
+        
 		} 
 		
 		tbody td, thead th { 
 			width : 200px; 
-			border-right: 2px solid black; 
+			
 		} 
 		td { 
 			text-align:center; 
-		} 
+		}
+        th { 
+			text-align:center; 
+		}  
 </style>
 {% endblock %}
 
@@ -152,7 +162,23 @@ able.scrolldown {
         
         <tr> 
             <td>10-12-2012</td> 
+            <td>Half Day</td> 
+        </tr> 
+        <tr> 
+            <td>10-12-2012</td> 
             <td>Full Day</td> 
+        </tr> 
+        <tr> 
+            <td>10-12-2012</td> 
+            <td>Half Day</td> 
+        </tr> 
+        <tr> 
+            <td>10-12-2012</td> 
+            <td>Full Day</td> 
+        </tr> 
+        <tr> 
+            <td>10-12-2012</td> 
+            <td>Half Day</td> 
         </tr> 
         <tr> 
             <td>10-12-2012</td> 
@@ -161,69 +187,36 @@ able.scrolldown {
         <tr> 
             <td>10-12-2012</td> 
             <td>Full Day</td> 
-        </tr> 
-        <tr> 
+        </tr>  <tr> 
             <td>10-12-2012</td> 
             <td>Full Day</td> 
+        </tr>  <tr> 
+            <td>10-12-2012</td> 
+            <td>Full Day</td> 
+        </tr>  <tr> 
+            <td>10-12-2012</td> 
+            <td>Full Day</td> 
+        </tr>
+        <tr> 
+            <td>10-12-2012</td> 
+            <td>Half Day</td> 
         </tr> 
     </tbody> 
 </table> 
-<!--
-<div class="header">
-<div class="row">
-    <div class="col" style="border-right-style: solid;border-right-width: thin;margin-left: 100px;height: 36px;">
-        <p style="font-weight: bold;
-        margin-top: -5px;
-        text-align: center;font-size: 16px;">Date</p> </div>
-    <div class="col"><h4>status</h4>
-</div>
-</div>
-<div class="row">                     
-    <div class="col">
-<dl style="padding-right: 18px;
-padding-left: 62px;">
-    <dt>10-12-2012</dt>
-    <dt>10-12-2012</dt><dt>10-12-2012</dt><dt>10-12-2012</dt><dt>10-12-2012</dt><dt>10-12-2012</dt>
-    <dt>10-12-2012</dt><dt>10-12-2012</dt><dt>10-12-2012</dt><dt>10-12-2012</dt>
-    <dt>10-12-2012</dt>
-    <dt>10-12-2012</dt>
-    <dt>10-12-2012</dt>
-    
-  </dl>
-    </div>
-    <div class="col">
-        <dl>
-            <dt>Full Day</dt>
-            <dt>Full Day</dt>
-            <dt>Full Day</dt>
-            <dt>Half Day</dt><dt>Full Day</dt>
-            <dt>Full Day</dt><dt>Half Day</dt>
-            <dt>Full Day</dt><dt>Half Day</dt>
-            <dt>Full Day</dt><dt>Half Day</dt>
-            <dt>Full Day</dt><dt>
-          </dl>
-    </div>
-</div>
 
-   <div class="row">
-        <div class="col" style="border-right-style: solid;border-right-width: thin;margin-left: 100px;height: 36px;">
-            <p style="font-weight: bold;
-            margin-top: -5px;
-            text-align: center;font-size: 16px;">Date</p> </div>
-        <div class="col"><h4>status</h4>
-    </div>
-    </div>
-    <div class="row">
-        <div class="col" style="border-right-style: solid;border-right-width: thin;margin-left: 100px;height: 36px;">
-            <p style="font-weight: bold;
-            margin-top: -5px;
-            text-align: center;font-size: 16px;">Date</p> </div>
-        <div class="col"><h4>status</h4>
-    </div>
-    </div>
-    </div>-->
-    
 </body>
 
 
 {% endblock %}
+
+{%block script%}
+<script>
+    $.ajax({
+        type: 'get', 
+        url: '/attendance_api/',
+          success: function (response) {
+                console.log(response)
+            }
+        });
+    </script>
+    {% endblock %}

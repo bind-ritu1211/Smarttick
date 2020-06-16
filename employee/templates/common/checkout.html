@@ -68,3 +68,17 @@
 </body>
 
 {% endblock %}
+
+{%block script%}
+<script>
+    $.ajax({
+        type: 'post', 
+        url: '/checkout_api/',
+        data: { csrfmiddlewaretoken: "{{ csrf_token }}",   // < here 
+            state:"inactive" 
+          },          success: function (response) {
+                console.log(response)
+            }
+        });
+    </script>
+    {% endblock %}

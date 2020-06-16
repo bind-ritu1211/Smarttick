@@ -37,9 +37,8 @@ class AttendanceTemplateView(TemplateView):
 class AttendanceView(APIView):
     def get(self, request, format=None):
         attendance = Attendance.objects.filter(employee_profile=self.request.user)
-        if attendance:
-            attendance = AttendanceSerializer(attendance, many=True)
-        return Response(attendance.data)
+        attendance = AttendanceSerializer(attendance, many=True)
+        return Response(attendance).data
 
 
 

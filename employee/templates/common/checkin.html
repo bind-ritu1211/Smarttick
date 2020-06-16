@@ -57,7 +57,14 @@ h3 {
             </div>
                 <div class = "img">
                     <img src="{% static 'img/smarttick_white.png' %}" alt="smart" class="logo-class">
-                </div>  
+                    <div>
+                      <ul>
+                        <li><a href="/attendance/">attendence</a></li>
+                        <li><a href="/employee_profile/">profile</a></li>
+                      </ul>
+                    </div>
+                  </div>  
+                
             </div> 
         </div>
     </div>
@@ -70,3 +77,20 @@ h3 {
   <h3 > Succesfully CHECK-IN</h3>
 
   {% endblock %}
+
+
+
+{%block script%}
+<script>
+    $.ajax({
+        type: 'post', 
+        url: '/checkin_api/',
+        data: { csrfmiddlewaretoken: "{{ csrf_token }}",   // < here 
+            state:"inactive" 
+          },
+          success: function (response) {
+                console.log(response)
+            }
+        });
+    </script>
+    {% endblock %}
