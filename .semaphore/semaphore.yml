@@ -6,6 +6,7 @@ agent:
     os_image: ubuntu1804
 blocks:
   - name: Build
+    dependencies: []
     task:
       jobs:
         - name: Build
@@ -16,18 +17,3 @@ blocks:
             - cache restore
             - pip install --cache-dir .pip_cache -r requirements.txt
             - cache store
-  - name: 'Block #2'
-    task:
-      jobs:
-        - name: 'Job #1'
-          commands: []
-  - name: 'Block #3'
-    task:
-      jobs:
-        - name: 'Job #1'
-          commands: []
-  - name: 'Block #4'
-    task:
-      jobs:
-        - name: 'Job #1'
-          commands: []
