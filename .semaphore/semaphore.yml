@@ -33,7 +33,7 @@ blocks:
             - python manage.py test
         - name: Checklist
           commands:
-            - cd smarttick
+            - cd martor_demo
             - python manage.py check --deploy
         - name: Style Check
           commands:
