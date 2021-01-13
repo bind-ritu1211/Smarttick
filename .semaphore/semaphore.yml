@@ -27,8 +27,8 @@ blocks:
       jobs:
         - name: Unit tests
           commands:
-            - cd smarttick
-            - python manage.py runserver
+            - cd martor_demo
+            - python manage.py test
         - name: Checklist
           commands:
             - cd smarttick
