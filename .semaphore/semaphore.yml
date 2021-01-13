@@ -28,8 +28,8 @@ blocks:
         - name: Unit tests
           commands:
             - cd smarttick
-            - python manage.py makemigrations
             - python manage.py migrate
+            - python manage.py makemigrations
             - python manage.py test
         - name: Checklist
           commands:
